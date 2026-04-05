@@ -558,14 +558,26 @@
         <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Deliveries</span></div>
         <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Doc. Accuracy</span></div>
       </div>
-      <div class="hero-btns">
-        <!-- <a href="/cv/Sunipa Mandal CV 2026.pdf" class="btn-primary" onclick="downloadCV(event)"><i class="fa-solid fa-download"></i> Download Resume</a> -->
+      <!-- <div class="hero-btns">
+        <a href="/cv/Sunipa Mandal CV 2026.pdf" class="btn-primary" onclick="downloadCV(event)"><i class="fa-solid fa-download"></i> Download Resume</a>
          <a href="/cv/sunipa-mandal-cv-2026.pdf" 
             class="btn-primary"
             >
             <i class="fa-solid fa-download"></i> Download Resume
          </a>
         <a href="#certifications" class="btn-outline"><i class="fa-solid fa-certificate"></i> View Certifications</a>
+      </div> -->
+      <div class="hero-btns">
+        <a href="./cv/sunipa-mandal-cv-2026.pdf" 
+           class="btn-primary" 
+           download="sunipa-mandal-cv-2026.pdf">
+           
+           <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+      
+        <a href="#certifications" class="btn-outline">
+          <i class="fa-solid fa-certificate"></i> View Certifications
+        </a>
       </div>
     </div>
     <div class="hero-photo-wrap">
@@ -1063,10 +1075,10 @@
   }
 
   // Download CV
-  function downloadCV(e) {
-    e.preventDefault();
-    alert('In a live site, this would trigger a PDF download of your resume. Add your actual CV PDF link here.');
-  }
+  // function downloadCV(e) {
+  //   e.preventDefault();
+  //   alert('In a live site, this would trigger a PDF download of your resume. Add your actual CV PDF link here.');
+  // }
 </script>
 </body>
 </html>
