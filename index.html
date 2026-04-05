@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunipa Mandal | GNM Nursing Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --navy: #0d2d4e;
+    --teal: #0e7c7b;
+    --sky: #3ab5c8;
+    --light-teal: #e8f7f7;
+    --white: #ffffff;
+    --off-white: #f4f8fb;
+    --text-dark: #1a2b3c;
+    --text-mid: #4a6177;
+    --text-light: #8aa4b8;
+    --accent-gold: #c9a96e;
+    --border: #d6e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(13,45,78,0.97);
+    backdrop-filter: blur(12px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 6%;
+    height: 64px;
+    border-bottom: 1px solid rgba(58,181,200,0.2);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600;
+    color: var(--white); letter-spacing: 0.04em;
+  }
+  .nav-logo span { color: var(--sky); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none; font-size: 0.82rem;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--sky); }
+  .nav-cta {
+    background: var(--teal); color: var(--white) !important;
+    padding: 7px 18px; border-radius: 4px !important;
+    font-weight: 500 !important;
+  }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; transition: all 0.3s; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, #0a3d5f 50%, #0d4a6e 100%);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 80px 6% 0;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(circle at 70% 30%, rgba(58,181,200,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(14,124,123,0.12) 0%, transparent 45%);
+  }
+  .hero-grid-overlay {
+    position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+    background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .hero-content {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(58,181,200,0.15);
+    border: 1px solid rgba(58,181,200,0.35);
+    color: var(--sky); font-size: 0.75rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 20px;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-badge i { font-size: 0.7rem; }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    font-weight: 600; line-height: 1.12;
+    color: var(--white); margin-bottom: 0.5rem;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero-title em { font-style: normal; color: var(--sky); }
+  .hero-subtitle {
+    font-size: 1rem; color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em; margin-bottom: 1.4rem;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-desc {
+    font-size: 0.95rem; color: rgba(255,255,255,0.72);
+    line-height: 1.75; max-width: 480px; margin-bottom: 2rem;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-bottom: 2.2rem;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 700; color: var(--sky); display: block;
+  }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; }
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+  .btn-primary {
+    background: var(--teal); color: white;
+    padding: 13px 28px; border-radius: 5px;
+    font-size: 0.88rem; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.03em;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(14,124,123,0.4);
+  }
+  .btn-primary:hover { background: #0a6968; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(14,124,123,0.5); }
+  .btn-outline {
+    border: 1.5px solid rgba(58,181,200,0.5); color: var(--sky);
+    padding: 13px 28px; border-radius: 5px;
+    font-size: 0.88rem; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.03em;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: rgba(58,181,200,0.1); border-color: var(--sky); }
+
+  /* Hero photo */
+  .hero-photo-wrap {
+    display: flex; justify-content: center; align-items: center;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .photo-frame {
+    position: relative; width: 340px; height: 420px;
+  }
+  
+  .photo-frame::before {
+    content: '';
+    position: absolute; top: -12px; right: -12px;
+    width: 100%; height: 100%;
+    border: 2px solid var(--teal); border-radius: 16px;
+    z-index: 0;
+  }
+  .photo-frame::after {
+    content: '';
+    position: absolute; bottom: -10px; left: -10px;
+    width: 60%; height: 60%;
+    border: 1px solid rgba(58,181,200,0.3); border-radius: 12px;
+    z-index: 0;
+  }
+  /* .profile-photo {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 14px; position: relative; z-index: 1;
+    display: block;
+  } */
+  .profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+  /* SVG illustration as professional placeholder */
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    border-radius: 14px; position: relative; z-index: 1;
+    background: linear-gradient(160deg, #0e4d7a 0%, #0c3d62 60%, #0a2e4a 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+    overflow: hidden;
+  }
+  .photo-badge-card {
+    position: absolute; bottom: -8px; left: -8px;
+    background: white; border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    z-index: 3;
+    display: flex; align-items: center; gap: 10px;
+    animation: pulse 3s infinite;
+  }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+  .badge-icon { width: 34px; height: 34px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .badge-icon i { color: white; font-size: 0.85rem; }
+  .badge-text { font-size: 0.75rem; }
+  .badge-text strong { display: block; color: var(--navy); font-size: 0.8rem; }
+  .badge-text span { color: var(--text-mid); }
+  .council-tag {
+    position: absolute; top: 16px; right: -8px;
+    background: var(--accent-gold); color: var(--navy);
+    font-size: 0.68rem; font-weight: 600;
+    padding: 5px 12px; border-radius: 4px 0 0 4px;
+    letter-spacing: 0.05em; z-index: 3;
+  }
+
+  /* Nurse SVG illustration */
+  .nurse-svg-wrap { position: relative; z-index: 2; width: 100%; height: 100%; }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 90px 6%; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal); font-weight: 600; margin-bottom: 0.6rem;
+  }
+  .section-tag::before { content:''; width: 20px; height: 2px; background: var(--teal); border-radius: 2px; }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 600; color: var(--navy);
+    line-height: 1.2; margin-bottom: 0.5rem;
+  }
+  .section-sub { font-size: 0.95rem; color: var(--text-mid); max-width: 520px; line-height: 1.7; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 5rem; align-items: center; margin-top: 3.5rem;
+  }
+  .about-img-wrap { position: relative; }
+  .about-img-box {
+    width: 100%; aspect-ratio: 3/4; max-width: 320px;
+    background: linear-gradient(160deg, #e8f7f7 0%, #d0eef0 100%);
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-img-box i { font-size: 6rem; color: var(--teal); opacity: 0.3; }
+  .about-accent {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--navy); border-radius: 12px;
+    padding: 18px 22px; color: white;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(13,45,78,0.25);
+  }
+  .about-accent strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--sky); }
+  .about-accent span { font-size: 0.72rem; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; text-transform: uppercase; }
+  .about-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 1rem; }
+  .about-text p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
+  .about-values { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.4rem; }
+  .value-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--light-teal); color: var(--teal);
+    padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+    border: 1px solid rgba(14,124,123,0.2);
+  }
+  .value-chip i { font-size: 0.7rem; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--off-white); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .skill-card {
+    background: var(--white); border-radius: 12px;
+    padding: 1.8rem; border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: default;
+  }
+  .skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,45,78,0.1); }
+  .skill-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--light-teal); display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .skill-icon i { color: var(--teal); font-size: 1.1rem; }
+  .skill-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .skill-card p { font-size: 0.83rem; color: var(--text-mid); line-height: 1.65; }
+  .skill-bar-row { display: flex; justify-content: space-between; align-items: center; margin-top: 0.8rem; margin-bottom: 4px; }
+  .skill-bar-row span { font-size: 0.72rem; color: var(--text-light); }
+  .skill-bar { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--sky)); border-radius: 4px; width: 0; transition: width 1.2s ease; }
+
+  /* Soft skills */
+  .soft-skills { margin-top: 3rem; }
+  .soft-skills h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 1.2rem; }
+  .soft-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .soft-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 1px solid var(--border);
+    color: var(--text-dark); padding: 9px 18px;
+    border-radius: 30px; font-size: 0.83rem;
+    transition: all 0.2s;
+  }
+  .soft-pill:hover { background: var(--light-teal); border-color: var(--teal); color: var(--teal); }
+  .soft-pill i { color: var(--teal); font-size: 0.75rem; }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--white); }
+  .timeline { position: relative; margin-top: 3.5rem; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--teal), var(--sky), rgba(58,181,200,0.1));
+  }
+  .timeline-item { position: relative; padding-bottom: 2.8rem; padding-left: 2rem; }
+  .timeline-dot {
+    position: absolute; left: -2.45rem; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--teal); border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--teal);
+  }
+  .timeline-date {
+    font-size: 0.72rem; font-weight: 600; color: var(--sky);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .timeline-card {
+    background: var(--off-white); border-radius: 10px;
+    padding: 1.4rem 1.6rem; border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .timeline-card:hover { border-color: var(--sky); }
+  .timeline-card h4 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .timeline-org { font-size: 0.82rem; color: var(--teal); font-weight: 500; margin-bottom: 0.8rem; }
+  .timeline-card ul { padding-left: 1.1rem; }
+  .timeline-card li { font-size: 0.87rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.3rem; }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--off-white); }
+  .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 3rem; }
+  .cert-card {
+    background: white; border-radius: 12px;
+    padding: 1.6rem; border: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(13,45,78,0.09); }
+  .cert-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cert-icon.gold { background: rgba(201,169,110,0.15); }
+  .cert-icon.teal { background: var(--light-teal); }
+  .cert-icon.navy { background: rgba(13,45,78,0.08); }
+  .cert-icon i { font-size: 1.2rem; }
+  .cert-icon.gold i { color: var(--accent-gold); }
+  .cert-icon.teal i { color: var(--teal); }
+  .cert-icon.navy i { color: var(--navy); }
+  .cert-info h4 { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+  .cert-info p { font-size: 0.78rem; color: var(--text-mid); line-height: 1.55; }
+  .cert-year { font-size: 0.7rem; color: var(--sky); font-weight: 600; letter-spacing: 0.06em; margin-top: 0.35rem; }
+
+  /* ── CASE STUDIES ── */
+  #cases { background: var(--white); }
+  .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-top: 3rem; }
+  .case-card {
+    background: var(--off-white); border-radius: 14px;
+    padding: 2rem; border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .case-card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(13,45,78,0.1); }
+  .case-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    height: 3px; width: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--sky));
+  }
+  .case-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--light-teal); color: var(--teal);
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px;
+    margin-bottom: 0.8rem;
+  }
+  .case-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--navy); margin-bottom: 0.7rem; }
+  .case-card p { font-size: 0.87rem; color: var(--text-mid); line-height: 1.75; }
+  .case-outcome {
+    display: flex; align-items: center; gap: 6px;
+    margin-top: 1rem; font-size: 0.8rem; font-weight: 500; color: var(--teal);
+  }
+  .case-outcome i { font-size: 0.75rem; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--navy); }
+  #testimonials .section-title { color: white; }
+  #testimonials .section-tag { color: var(--sky); }
+  #testimonials .section-tag::before { background: var(--sky); }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 3rem; }
+  .testi-card {
+    background: rgba(255,255,255,0.06); border-radius: 12px;
+    padding: 1.8rem; border: 1px solid rgba(255,255,255,0.1);
+    transition: border-color 0.2s;
+  }
+  .testi-card:hover { border-color: rgba(58,181,200,0.35); }
+  .testi-stars { color: var(--accent-gold); font-size: 0.7rem; margin-bottom: 0.9rem; letter-spacing: 2px; }
+  .testi-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 1.2rem; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 0.75rem; }
+  .testi-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(58,181,200,0.2); display: flex; align-items: center; justify-content: center;
+  }
+  .testi-avatar i { color: var(--sky); font-size: 1rem; }
+  .testi-name { font-size: 0.85rem; font-weight: 600; color: white; }
+  .testi-role { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--off-white); }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; margin-top: 3.5rem; align-items: start; }
+  .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem; }
+  .contact-info p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; }
+  .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-item { display: flex; align-items: center; gap: 0.9rem; }
+  .contact-item-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--light-teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .contact-item-icon i { color: var(--teal); font-size: 0.9rem; }
+  .contact-item-text span { display: block; font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-item-text strong { font-size: 0.88rem; color: var(--navy); }
+  .contact-reg {
+    margin-top: 1.6rem; background: white;
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    display: flex; align-items: center; gap: 0.9rem;
+  }
+  .reg-icon { width: 40px; height: 40px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .reg-icon i { color: var(--sky); }
+  .reg-text span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); }
+  .reg-text strong { display: block; font-size: 0.9rem; color: var(--navy); }
+  .contact-form { background: white; border-radius: 14px; padding: 2.2rem; border: 1px solid var(--border); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.45rem; letter-spacing: 0.03em; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 10px 14px;
+    border: 1.5px solid var(--border); border-radius: 7px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--text-dark);
+    background: var(--off-white); outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--teal); background: white;
+  }
+  .form-group textarea { height: 110px; resize: vertical; }
+  .btn-submit {
+    width: 100%; background: linear-gradient(135deg, var(--teal), #0a6968);
+    color: white; border: none; padding: 13px;
+    border-radius: 7px; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .btn-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+  .form-success {
+    display: none; text-align: center; padding: 1.5rem;
+    color: var(--teal); font-weight: 500;
+  }
+  .form-success i { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); padding: 2.5rem 6%;
+    text-align: center; color: rgba(255,255,255,0.45);
+    font-size: 0.82rem;
+  }
+  footer span { color: var(--sky); }
+
+  /* ── SCROLL TO TOP ── */
+  .scroll-top {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--teal); color: white; border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s, transform 0.2s;
+    z-index: 99; box-shadow: 0 4px 20px rgba(14,124,123,0.4);
+  }
+  .scroll-top.show { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { transform: translateY(-3px); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+    .hero-photo-wrap { order: -1; }
+    .photo-frame { width: 240px; height: 300px; }
+    .hero-stats { justify-content: center; }
+    .hero-btns { justify-content: center; }
+    .hero-desc { margin: 0 auto 2rem; }
+    .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-grid, .cert-grid, .testi-grid { grid-template-columns: 1fr 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: 1rem 6%; gap: 1rem; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 600px) {
+    .skills-grid, .cert-grid, .testi-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 5%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">Sunipa<span>Mandal</span> <i class="fa-solid fa-stethoscope" style="font-size:0.85rem; margin-left:4px; color:var(--sky)"></i></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge"><i class="fa-solid fa-shield-heart"></i> Registered GNM Nurse — Reg. No. WB/NR-2018-04871</div>
+      <h1 class="hero-title">Dedicated <em>GNM Nursing</em> Professional</h1>
+      <p class="hero-subtitle">Specialized in Critical Care &amp; Midwifery</p>
+      <p class="hero-desc">Committed to delivering compassionate, evidence-based patient care with a focus on safety, dignity, and holistic healing across critical and maternity wards.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">6+</span><span class="stat-label">Months Exp.</span></div>
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Deliveries</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Doc. Accuracy</span></div>
+      </div>
+      <div class="hero-btns">
+        <!-- <a href="/cv/Sunipa Mandal CV 2026.pdf" class="btn-primary" onclick="downloadCV(event)"><i class="fa-solid fa-download"></i> Download Resume</a> -->
+         <a href="/cv/sunipa-mandal-cv-2026.pdf" 
+            class="btn-primary"  target="_blank"
+            download>
+            <i class="fa-solid fa-download"></i> Download Resume
+         </a>
+        <a href="#certifications" class="btn-outline"><i class="fa-solid fa-certificate"></i> View Certifications</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="photo-frame">
+        
+        <div class="council-tag">✦ NMC Registered</div>
+
+        <!-- ✅ Replace SVG with Image -->
+        <img src="Images/Sunipa-image.jpeg" alt="Nurse Profile" class="profile-photo">
+
+        <div class="photo-badge-card">
+          <div class="badge-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div class="badge-text">
+            <strong>Active Status</strong>
+            <span>Nursing Council Registered</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-box">
+          <svg viewBox="0 0 280 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="280" height="380" fill="linear-gradient(to bottom, #e8f7f7, #d0eef0)"/>
+            <rect width="280" height="380" fill="url(#bgGrad2)"/>
+            <defs>
+              <linearGradient id="bgGrad2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c8eaeb"/>
+                <stop offset="100%" stop-color="#a8d8d8"/>
+              </linearGradient>
+            </defs>
+            <!-- Clipboard illustration -->
+            <rect x="80" y="80" width="120" height="160" rx="8" fill="white" stroke="#c0dede" stroke-width="2"/>
+            <rect x="108" y="72" width="64" height="20" rx="6" fill="#d0eef0" stroke="#a8d8d8" stroke-width="1.5"/>
+            <rect x="92" y="110" width="96" height="8" rx="3" fill="#e0f0f0"/>
+            <rect x="92" y="126" width="80" height="6" rx="3" fill="#e8f5f5"/>
+            <rect x="92" y="140" width="88" height="6" rx="3" fill="#e8f5f5"/>
+            <rect x="92" y="156" width="72" height="6" rx="3" fill="#e8f5f5"/>
+            <!-- Check marks -->
+            <circle cx="100" cy="175" r="7" fill="#0e7c7b" opacity="0.8"/>
+            <path d="M 97 175 L 99 178 L 104 172" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="112" y="171" width="65" height="6" rx="3" fill="#e0f0f0"/>
+            <circle cx="100" cy="195" r="7" fill="#0e7c7b" opacity="0.8"/>
+            <path d="M 97 195 L 99 198 L 104 192" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <rect x="112" y="191" width="55" height="6" rx="3" fill="#e0f0f0"/>
+            <!-- Stethoscope small -->
+            <circle cx="170" cy="280" r="30" fill="rgba(14,124,123,0.1)" stroke="rgba(14,124,123,0.2)" stroke-width="1"/>
+            <path d="M 155 270 Q 155 285 165 290 Q 178 296 180 280" fill="none" stroke="#0e7c7b" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="180" cy="275" r="8" fill="none" stroke="#0e7c7b" stroke-width="2.5"/>
+            <circle cx="180" cy="275" r="3" fill="#0e7c7b"/>
+          </svg>
+        </div>
+        <div class="about-accent">
+          <strong>6+</strong>
+          <span>Years of<br>Clinical Excellence</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">A Nurse Driven by Compassion &amp; Clinical Excellence</h2>
+        <p>My journey into nursing began not just as a career choice, but as a calling. After completing my GNM Diploma from State Nursing School with distinction, I chose to specialize in Critical Care and Midwifery — two fields that require both technical precision and deep human empathy.</p>
+        <p>Over six years of hands-on experience in ICUs, labour wards, and emergency settings have shaped my belief that every patient deserves individualized, dignified care. I view nursing as a partnership — between healthcare providers, patients, and families — and I strive to be the calm, competent presence at the center of that partnership.</p>
+        <p>My philosophy: <em style="color:var(--teal)">Treat the person, not just the condition.</em></p>
+        <div class="about-values">
+          <span class="value-chip"><i class="fa-solid fa-check"></i> Patient Safety First</span>
+          <span class="value-chip"><i class="fa-solid fa-check"></i> Evidence-Based Care</span>
+          <span class="value-chip"><i class="fa-solid fa-check"></i> Holistic Health</span>
+          <span class="value-chip"><i class="fa-solid fa-check"></i> Team Collaboration</span>
+          <span class="value-chip"><i class="fa-solid fa-check"></i> Continuous Learning</span>
+          <span class="value-chip"><i class="fa-solid fa-check"></i> Patient Counseling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Competencies</div>
+      <h2 class="section-title">Clinical Skills &amp; Technical Expertise</h2>
+      <p class="section-sub">A comprehensive skill set honed through years of clinical practice in high-stakes environments.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fa-solid fa-syringe"></i></div>
+        <h4>IV Cannulation &amp; Phlebotomy</h4>
+        <p>Proficient in peripheral and central venous access, blood sampling, and IV therapy administration.</p>
+        <div class="skill-bar-row"><span>Proficiency</span><span>95%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="95"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h4>ECG Monitoring &amp; Interpretation</h4>
+        <p>Skilled in continuous cardiac monitoring, 12-lead ECG recording, and detecting arrhythmias in ICU settings.</p>
+        <div class="skill-bar-row"><span>Proficiency</span><span>90%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fa-solid fa-bandage"></i></div>
+        <h4>Wound Care &amp; Dressings</h4>
+        <p>Aseptic technique mastery for surgical, diabetic, and pressure wound management and post-operative care.</p>
+        <div class="skill-bar-row"><span>Proficiency</span><span>92%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fa-solid fa-pills"></i></div>
+        <h4>Medication Administration</h4>
+        <p>Strict adherence to 5-rights protocol for oral, IV, IM, and subcutaneous medications with zero error record.</p>
+        <div class="skill-bar-row"><span>Proficiency</span><span>98%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="98"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fa-solid fa-baby"></i></div>
+        <h4>Midwifery &amp; Labour Support</h4>
+        <p>Experienced in antenatal care, intrapartum monitoring, normal deliveries, and immediate newborn care.</p>
+        <div class="skill-bar-row"><span>Proficiency</span><span>88%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><i class="fa-solid fa-scalpel"></i></div>
+        <h4>OT Assistance &amp; Scrub Duties</h4>
+        <p>Trained in surgical scrub techniques, instrument handling, and maintaining sterile field in the operation theatre.</p>
+        <div class="skill-bar-row"><span>Proficiency</span><span>85%</span></div>
+        <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
+      </div>
+    </div>
+    <div class="soft-skills reveal">
+      <h3>Interpersonal &amp; Soft Skills</h3>
+      <div class="soft-grid">
+        <span class="soft-pill"><i class="fa-solid fa-comments"></i> Patient Counseling</span>
+        <span class="soft-pill"><i class="fa-solid fa-triangle-exclamation"></i> Crisis Management</span>
+        <span class="soft-pill"><i class="fa-solid fa-people-group"></i> Multidisciplinary Teamwork</span>
+        <span class="soft-pill"><i class="fa-solid fa-file-medical"></i> Clinical Documentation</span>
+        <span class="soft-pill"><i class="fa-solid fa-ear-listen"></i> Empathetic Communication</span>
+        <span class="soft-pill"><i class="fa-solid fa-clock"></i> Time Management</span>
+        <span class="soft-pill"><i class="fa-solid fa-user-shield"></i> Infection Control</span>
+        <span class="soft-pill"><i class="fa-solid fa-brain"></i> Critical Thinking</span>
+        <span class="soft-pill"><i class="fa-solid fa-graduation-cap"></i> Patient Education</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Career Journey</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub">A progressive career built on clinical excellence, continuous learning, and patient-centered care.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jan 2022 – Present</div>
+        <div class="timeline-card">
+          <h4>Senior Staff Nurse — Critical Care Unit</h4>
+          <div class="timeline-org">Apollo Gleneagles Hospital, Kolkata</div>
+          <ul>
+            <li>Independently managed care for 8–10 critically ill patients per shift in a 20-bed ICU.</li>
+            <li>Led the implementation of a structured fall-prevention protocol, reducing ward falls by 40%.</li>
+            <li>Mentored and oriented 6 junior nurses and student nurses in ICU procedures and documentation.</li>
+            <li>Maintained 100% accuracy in patient medication records and nursing care plans over 3 years.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jul 2019 – Dec 2021</div>
+        <div class="timeline-card">
+          <h4>Staff Nurse — Maternity &amp; Labour Ward</h4>
+          <div class="timeline-org">SSKM (PG Hospital), Kolkata</div>
+          <ul>
+            <li>Assisted in 50+ successful normal deliveries and monitored high-risk obstetric patients.</li>
+            <li>Conducted antenatal education sessions, improving patient compliance with health protocols.</li>
+            <li>Provided immediate newborn resuscitation support and APGAR scoring in the delivery room.</li>
+            <li>Managed a 15-bed maternity ward, coordinating with obstetricians and paediatricians daily.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jun 2018 – Jun 2019</div>
+        <div class="timeline-card">
+          <h4>Junior Staff Nurse — General Medicine Ward</h4>
+          <div class="timeline-org">R.G. Kar Medical College &amp; Hospital, Kolkata</div>
+          <ul>
+            <li>Delivered nursing care under supervision in a 30-bed general medicine ward.</li>
+            <li>Performed routine vitals monitoring, IV cannulation, and pre/post-operative care.</li>
+            <li>Gained foundational experience in chronic disease management (Diabetes, Hypertension, COPD).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" style="background:var(--accent-gold); box-shadow: 0 0 0 2px var(--accent-gold);"></div>
+        <div class="timeline-date">2015 – 2018</div>
+        <div class="timeline-card">
+          <h4>GNM Diploma — Nursing Education</h4>
+          <div class="timeline-org">West Bengal Nurses Academy, Kolkata</div>
+          <ul>
+            <li>Completed 3.5-year GNM Diploma program with First Class distinction.</li>
+            <li>Clinical rotations across medical, surgical, paediatric, OT, and maternity wards.</li>
+            <li>Awarded "Best Student Nurse of the Year 2018" by the Institute.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Credentials</div>
+      <h2 class="section-title">Certifications &amp; Education</h2>
+      <p class="section-sub">Formally recognized qualifications that validate my clinical expertise and professional standing.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon gold"><i class="fa-solid fa-medal"></i></div>
+        <div class="cert-info">
+          <h4>GNM Diploma in Nursing</h4>
+          <p>General Nursing &amp; Midwifery — First Class Distinction</p>
+          <div class="cert-year">West Bengal Nurses Academy · 2018</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon teal"><i class="fa-solid fa-id-card"></i></div>
+        <div class="cert-info">
+          <h4>State Nursing Council Registration</h4>
+          <p>West Bengal Nursing Council — Licensed Registered Nurse</p>
+          <div class="cert-year">Reg. No. WB/NR-2018-04871 · Valid 2025</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon navy"><i class="fa-solid fa-heart"></i></div>
+        <div class="cert-info">
+          <h4>BLS Certification</h4>
+          <p>Basic Life Support — American Heart Association</p>
+          <div class="cert-year">AHA Certified · 2023 (Valid 2025)</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon gold"><i class="fa-solid fa-star-of-life"></i></div>
+        <div class="cert-info">
+          <h4>ACLS Certification</h4>
+          <p>Advanced Cardiovascular Life Support — Emergency Protocols</p>
+          <div class="cert-year">AHA Certified · 2022 (Valid 2024)</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon teal"><i class="fa-solid fa-baby"></i></div>
+        <div class="cert-info">
+          <h4>Midwifery Certification</h4>
+          <p>Advanced Midwifery Practice — Labour &amp; Delivery Specialization</p>
+          <div class="cert-year">WBMSC · 2020</div>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon navy"><i class="fa-solid fa-virus-slash"></i></div>
+        <div class="cert-info">
+          <h4>Infection Control &amp; Prevention</h4>
+          <p>Hospital Infection Control Practices — ICU Protocol Certified</p>
+          <div class="cert-year">Apollo Hospital · 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Highlights of Care</div>
+      <h2 class="section-title">Case Studies &amp; Clinical Highlights</h2>
+      <p class="section-sub">All patient details are fully anonymized in compliance with data privacy regulations.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <span class="case-tag"><i class="fa-solid fa-heart-pulse"></i> Critical Care</span>
+        <h4>Rapid Response: Acute Cardiac Event in ICU</h4>
+        <p>A 58-year-old male patient in the post-cardiac surgery ICU showed sudden signs of haemodynamic instability during night shift. Recognizing early warning signs — falling SpO₂, erratic ECG trace, and rising lactate — I immediately activated the rapid response team, initiated emergency protocol, and provided continuous ventilator support, preventing deterioration into cardiac arrest.</p>
+        <div class="case-outcome"><i class="fa-solid fa-circle-check"></i> Patient stabilized and discharged after 12-day ICU stay</div>
+      </div>
+      <div class="case-card reveal">
+        <span class="case-tag"><i class="fa-solid fa-baby"></i> Midwifery</span>
+        <h4>Managing a High-Risk Labour: Prolonged Second Stage</h4>
+        <p>During a night shift, a primigravida patient with gestational hypertension experienced a prolonged second stage of labour. I provided continuous fetal heart rate monitoring, repositioned the patient for optimal fetal descent, administered IV fluids per protocol, and maintained calm communication. I coordinated timely escalation to the senior obstetrician, resulting in a safe normal delivery.</p>
+        <div class="case-outcome"><i class="fa-solid fa-circle-check"></i> Healthy mother &amp; baby — Apgar score 9/10</div>
+      </div>
+      <div class="case-card reveal">
+        <span class="case-tag"><i class="fa-solid fa-shield-virus"></i> Infection Control</span>
+        <h4>Ward-Wide HAI Reduction Initiative</h4>
+        <p>After noticing an increase in catheter-associated infections, I proposed and led a structured CAUTI prevention bundle in the ICU — including daily catheter necessity reviews, correct insertion technique reinforcement, and staff education sessions. The initiative, implemented over 3 months, led to a measurable decrease in hospital-acquired infection rates.</p>
+        <div class="case-outcome"><i class="fa-solid fa-circle-check"></i> HAI rate reduced by 35% over 3 months</div>
+      </div>
+      <div class="case-card reveal">
+        <span class="case-tag"><i class="fa-solid fa-comments"></i> Patient Education</span>
+        <h4>Improving Diabetic Patient Self-Management</h4>
+        <p>A recently diagnosed Type 2 diabetic patient was repeatedly readmitted due to poor medication compliance and diet management. I developed a simple, illustrated patient education handout in Bengali, conducted bedside counseling sessions, and coordinated with the dietician. On 3-month follow-up, the patient reported improved glycemic control and no further emergency readmissions.</p>
+        <div class="case-outcome"><i class="fa-solid fa-circle-check"></i> Zero readmissions in 6 months post-intervention</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<!-- <section id="testimonials">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">What Colleagues &amp; Supervisors Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Priya is one of the most clinically astute nurses I have worked with. Her ability to stay calm under pressure in the ICU and make swift, correct assessments is remarkable. She is an asset to any critical care team."</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+          <div>
+            <div class="testi-name">Dr. Arindam Chatterjee</div>
+            <div class="testi-role">Head of Critical Care, Apollo Gleneagles</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"In my 20 years as a Head Nurse, I rarely see nurses who combine technical skill with such genuine warmth for patients. Priya's documentation is impeccable and her communication with families is exemplary."</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><i class="fa-solid fa-user-nurse"></i></div>
+          <div>
+            <div class="testi-name">Ms. Rekha Bose</div>
+            <div class="testi-role">Head Nurse, Maternity Ward, SSKM</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The nurse who held my hand through my entire labour. She explained everything, never made me feel scared, and I genuinely believe her care made my experience so much better. I will never forget her kindness."</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">Anonymous Patient</div>
+            <div class="testi-role">Maternity Ward, 2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; margin-bottom:0;">
+      <div class="section-tag" style="justify-content:center;">Get In Touch</div>
+      <h2 class="section-title" style="text-align:center;">Open to Opportunities</h2>
+      <p class="section-sub" style="margin: 0 auto; text-align:center;">Whether you're a recruiter, a healthcare organization, or a private care agency — I'd love to connect.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <h3>Let's Connect</h3>
+        <p>I am currently open to full-time staff nurse positions in ICU/CCU, maternity ward, or private clinical settings — in West Bengal and across India.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-item-text"><span>Email</span><strong>sunipamandal640@gmail.com</strong></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-item-text"><span>Phone</span><strong>+91 80801 79978</strong></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-item-text"><span>Location</span><strong>Kolkata, West Bengal, India</strong></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <div class="contact-item-text"><span>LinkedIn</span><strong>linkedin.com/in/</strong></div>
+          </div>
+        </div>
+        <div class="contact-reg">
+          <div class="reg-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="reg-text">
+            <span>WB Nursing Council Reg. No.</span>
+            <strong> Active &amp; Valid</strong>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Dr. / HR Manager Name" required>
+            </div>
+            <div class="form-group">
+              <label>Organization</label>
+              <input type="text" placeholder="Hospital / Agency Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Nature of Inquiry</label>
+            <select>
+              <option value="">Select purpose...</option>
+              <option>Full-time Employment</option>
+              <option>Part-time / Contract Role</option>
+              <option>Private Care / Home Nursing</option>
+              <option>Reference / Verification</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about the opportunity or how I can help..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <i class="fa-solid fa-circle-check"></i>
+          Thank you! Your message has been received. I'll get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:white; margin-bottom:0.5rem;">Priya Sharma, GNM</p>
+  <p>WB Nursing Council Reg. No. <span>WB/NR-2018-04871</span> · Kolkata, West Bengal</p>
+  <p style="margin-top:0.5rem;">© 2024 Priya Sharma · Built with care &amp; professionalism</p>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<script>
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  }));
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Skill bars
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skills-grid').forEach(g => barObserver.observe(g));
+
+  // Form submit
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // Download CV
+  function downloadCV(e) {
+    e.preventDefault();
+    alert('In a live site, this would trigger a PDF download of your resume. Add your actual CV PDF link here.');
+  }
+</script>
+</body>
+</html>
